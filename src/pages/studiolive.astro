@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import SignalBar from '../components/SignalBar.astro';
+import CTA from '../components/CTA.astro';
+
+const columns = [
+  {
+    title: 'The set',
+    copy: "Broadcast lighting, backdrop, dual-camera coverage, and professional audio. Looks like a network green room, fits in a 10x10.",
+  },
+  {
+    title: 'The producer',
+    copy: 'We prep your guests, run the interviews, and keep the schedule moving — you hand us a list of names, we hand you a library of stories.',
+  },
+  {
+    title: 'The deliverables',
+    copy: "Edited interview clips and social cuts delivered the same week, while the event is still in everyone's feed.",
+  },
+];
+---
+
+<Base title="StudioLive — the interview studio that comes to your event">
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+    <SignalBar class="mb-6" />
+    <p class="eyebrow mb-4">SIGNATURE OFFERING</p>
+    <h1 class="text-4xl md:text-6xl font-bold text-bone leading-tight max-w-3xl">
+      The interview studio that comes to your event.
+    </h1>
+    <p class="text-muted text-lg md:text-xl mt-6 max-w-2xl leading-relaxed">
+      Your conference is full of stories — leadership, members, sponsors, award winners. StudioLive is a broadcast-quality interview set that deploys in a breakout room or backstage corner and captures them all before everyone flies home.
+    </p>
+  </section>
+
+  <section class="bg-panel border-y border-line">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <h2 class="eyebrow mb-10">What's included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {columns.map((c) => (
+          <div class="border border-line p-8 flex flex-col gap-3">
+            <h3 class="text-xl text-bone font-semibold">{c.title}</h3>
+            <p class="text-muted leading-relaxed">{c.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="eyebrow mb-4">Who books it</h2>
+    <p class="text-muted text-lg leading-relaxed max-w-2xl">
+      Associations and conferences building year-round content from a three-day event. Brands capturing customer testimonials at scale. Organizations whose leadership is finally in one room.
+    </p>
+  </section>
+
+  <CTA heading="Add StudioLive to your event" buttonText="Get a quote" href="/contact" />
+</Base>

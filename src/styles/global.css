@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-bone font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid theme('colors.signal');
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] md:text-xs tracking-[0.15em] uppercase text-signal font-display font-medium;
+  }
+
+  .signal-bar {
+    @apply relative h-[2px] w-full max-w-[64px] bg-line overflow-hidden;
+  }
+  .signal-bar::after {
+    content: '';
+    @apply absolute inset-y-0 left-0 bg-signal;
+    width: 0%;
+  }
+  .signal-bar.is-visible::after {
+    width: 100%;
+    transition: width 300ms ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .signal-bar::after {
+      width: 100%;
+      transition: none;
+    }
+  }
+
+  .btn-signal {
+    @apply inline-flex items-center justify-center gap-2 bg-signal text-bone font-display font-medium px-6 py-3 text-sm uppercase tracking-wide hover:bg-[#c94526] transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-line text-bone font-display font-medium px-6 py-3 text-sm uppercase tracking-wide hover:border-signal hover:text-signal transition-colors;
+  }
+
+  .img-placeholder {
+    @apply flex items-center justify-center bg-panel border border-line text-muted text-xs text-center p-4 font-body;
+  }
+}

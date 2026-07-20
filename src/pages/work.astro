@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import SignalBar from '../components/SignalBar.astro';
+import WorkGrid from '../components/WorkGrid.astro';
+import CTA from '../components/CTA.astro';
+
+const items = [
+  {
+    filename: 'avalon.jpg',
+    alt: 'Dark ballroom with dual projection screens and chandelier during a general session',
+  },
+  {
+    filename: 'cobb-galleria.JPEG',
+    alt: 'Massive ballroom with a triple-screen general session for 300+ attendees',
+  },
+  {
+    filename: 'macPro_feb2026.jpg',
+    alt: 'Brand education event with white chairs and dual confidence monitors',
+  },
+  {
+    filename: 'workshop-porche-experience.jpeg',
+    alt: 'Hybrid workshop with stage and IMAG coverage',
+  },
+  {
+    filename: 'conference-panel.jpg',
+    alt: 'Panel production with IMAG, styled set with side TVs',
+  },
+  {
+    filename: 'conference.jpg',
+    alt: 'Summit stage production with dual screens and uplighting',
+  },
+  {
+    filename: 'conference-ExtremeShortThrowProjectors.jpeg',
+    alt: 'Leadership retreat with dual ultra-short-throw projection',
+  },
+  {
+    filename: 'dual-14ft-screens.jpeg',
+    alt: 'Dual 14ft screens and center stage screen for a 400-seat conference',
+  },
+  {
+    filename: '10ft-screen.jpeg',
+    alt: 'Gala production with projection and stage wash',
+  },
+  {
+    filename: 'loews-2.jpg',
+    alt: 'White-on-white ballroom production with dual screens',
+  },
+  {
+    filename: 'wedding-lighting.jpeg',
+    alt: 'Wedding lighting design with uplighting, gobos, and chandeliers',
+  },
+];
+---
+
+<Base title="Work — rooms we've produced">
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+    <SignalBar class="mb-6" />
+    <h1 class="text-4xl md:text-6xl font-bold text-bone leading-tight max-w-3xl">
+      The work speaks in rooms.
+    </h1>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <WorkGrid items={items} />
+  </section>
+
+  <CTA heading="Have an event on the calendar?" buttonText="Start the conversation" href="/contact" />
+</Base>

@@ -1,0 +1,26 @@
+---
+import SmartImage from './SmartImage.astro';
+
+interface Item {
+  filename: string;
+  alt: string;
+}
+interface Props {
+  items: Item[];
+}
+const { items } = Astro.props;
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {items.map((item) => (
+    <figure class="bg-panel border border-line overflow-hidden group">
+      <div class="aspect-[4/3] overflow-hidden">
+        <SmartImage
+          filename={item.filename}
+          alt={item.alt}
+          class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+        />
+      </div>
+    </figure>
+  ))}
+</div>

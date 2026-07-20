@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import SmartImage from '../components/SmartImage.astro';
+import SignalBar from '../components/SignalBar.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Base title="Services — Corporate AV, Broadcasting, Event Media">
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+    <SignalBar class="mb-6" />
+    <h1 class="text-4xl md:text-6xl font-bold text-bone leading-tight max-w-3xl">
+      Three lanes. One crew.
+    </h1>
+    <p class="text-muted text-lg md:text-xl mt-6 max-w-2xl leading-relaxed">
+      Every engagement is scoped to the room, the audience, and the outcome — no package pricing, no inflated line items. Tell us what the event needs to do, and we'll build the system that does it.
+    </p>
+  </section>
+
+  <!-- Corporate AV -->
+  <section class="border-t border-line">
+    <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1">
+        <p class="eyebrow mb-4">01 · CORPORATE AV</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-bone mb-6">Corporate AV</h2>
+        <p class="text-muted text-lg leading-relaxed">
+          General session audio, projection and LED walls, confidence monitors, breakout rooms, and show-calling. We've produced rooms from 40-person board retreats to 300+ seat multi-screen general sessions — same discipline at every size.
+        </p>
+      </div>
+      <div class="order-1 md:order-2 grid grid-cols-1 gap-4">
+        <div class="aspect-[16/10]">
+          <SmartImage
+            filename="cobb-galleria.JPEG"
+            alt="Massive ballroom with triple-screen general session, roughly 300 seats"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="aspect-[16/10]">
+          <SmartImage
+            filename="led-wall.jpeg"
+            alt="LED wall installation for general session"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Broadcasting -->
+  <section class="bg-panel border-t border-line">
+    <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="eyebrow mb-4">02 · BROADCASTING</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-bone mb-6">Broadcasting</h2>
+        <p class="text-muted text-lg leading-relaxed">
+          Multi-camera live production, IMAG, and streaming. From municipal meetings that can't miss a word to tournament livestreams with live scoreboard integration, we bring broadcast standards — redundancy, clean signal flow, calm comms — to live events.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="aspect-[16/10]">
+          <SmartImage
+            filename="conference-panel.jpg"
+            alt="Panel production with IMAG, side TVs, styled set"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="aspect-[16/10] img-placeholder">
+          <span>Broadcast/livestream stills coming soon — multi-cam, switcher, courtside</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Media -->
+  <section class="border-t border-line">
+    <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1">
+        <p class="eyebrow mb-4">03 · EVENT MEDIA</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-bone mb-6">Event Media</h2>
+        <p class="text-muted text-lg leading-relaxed">
+          Event photography and video capture, attendee and leadership testimonials, and highlight reels cut for the platforms your audience actually watches. The event is the shoot; the content is the asset.
+        </p>
+      </div>
+      <div class="order-1 md:order-2 aspect-[16/10]">
+        <SmartImage
+          filename="8ft-screen.JPG"
+          alt="Compact fast-fold screen setup"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Not sure which lane your event needs? Most need two."
+    buttonText="Start the conversation"
+    href="/contact"
+  />
+</Base>

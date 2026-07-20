@@ -1,0 +1,14 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  copy: string;
+}
+const { number, title, copy } = Astro.props;
+---
+
+<div class="bg-panel border border-line p-8 flex flex-col gap-4">
+  <span class="eyebrow">{number}</span>
+  <h3 class="text-2xl text-bone font-semibold">{title}</h3>
+  <p class="text-muted leading-relaxed">{copy}</p>
+</div>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`signal-bar ${className}`} data-signal-bar></div>
+
+<script>
+  const bars = document.querySelectorAll('[data-signal-bar]');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  bars.forEach((bar) => observer.observe(bar));
+</script>

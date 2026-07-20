@@ -1,0 +1,29 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Props {
+  filename: string;
+  alt: string;
+  class?: string;
+  eager?: boolean;
+}
+
+const { filename, alt, class: className = '', eager = false } = Astro.props;
+
+const publicPath = path.resolve('public/images', filename);
+const exists = fs.existsSync(publicPath);
+---
+
+{exists ? (
+  <img
+    src={`/images/${filename}`}
+    alt={alt}
+    class={className}
+    loading={eager ? 'eager' : 'lazy'}
+  />
+) : (
+  <div class={`img-placeholder ${className}`} aria-label={alt}>
+    <span>{filename}</span>
+  </div>
+)}

@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import SignalBar from '../components/SignalBar.astro';
+---
+
+<Base title="Contact — tell us about the event">
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+    <SignalBar class="mb-6" />
+    <h1 class="text-4xl md:text-6xl font-bold text-bone leading-tight max-w-3xl">
+      Tell us about the event.
+    </h1>
+    <p class="text-muted text-lg md:text-xl mt-6 max-w-2xl leading-relaxed">
+      Date, venue, headcount, and what has to go right — that's enough to start. You'll hear back within one business day.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-24 grid grid-cols-1 gap-16">
+    <form
+      action="mailto:dominic@upwardspiralpro.com"
+      method="post"
+      enctype="text/plain"
+      class="flex flex-col gap-6"
+    >
+      <div class="flex flex-col gap-2">
+        <label for="name" class="text-sm text-muted">Name</label>
+        <input id="name" name="Name" type="text" required class="bg-panel border border-line px-4 py-3 text-bone focus:border-signal outline-none" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="organization" class="text-sm text-muted">Organization</label>
+        <input id="organization" name="Organization" type="text" class="bg-panel border border-line px-4 py-3 text-bone focus:border-signal outline-none" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="email" class="text-sm text-muted">Email</label>
+        <input id="email" name="Email" type="email" required class="bg-panel border border-line px-4 py-3 text-bone focus:border-signal outline-none" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="event-date" class="text-sm text-muted">Event date</label>
+        <input id="event-date" name="Event Date" type="text" class="bg-panel border border-line px-4 py-3 text-bone focus:border-signal outline-none" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="needs" class="text-sm text-muted">What do you need?</label>
+        <textarea id="needs" name="What do you need" rows="5" required class="bg-panel border border-line px-4 py-3 text-bone focus:border-signal outline-none"></textarea>
+      </div>
+      <button type="submit" class="btn-signal self-start">Send</button>
+    </form>
+
+    <div class="border-t border-line pt-10 flex flex-col gap-2 text-muted">
+      <p class="eyebrow mb-2">Direct</p>
+      <a href="mailto:dominic@upwardspiralpro.com" class="hover:text-signal transition-colors">dominic@upwardspiralpro.com</a>
+      <a href="tel:+14704957342" class="hover:text-signal transition-colors">(470) 495-7342</a>
+      <span>Atlanta, GA — traveling nationwide</span>
+    </div>
+  </section>
+</Base>

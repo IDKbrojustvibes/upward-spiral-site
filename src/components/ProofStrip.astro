@@ -1,0 +1,16 @@
+---
+const stats = [
+  { big: '300+ seat', small: 'general sessions produced' },
+  { big: 'National brands', small: 'trusted with major activations' },
+  { big: '1 vendor', small: 'AV, broadcast, and media' },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 border-t border-b border-line py-10">
+  {stats.map((s) => (
+    <div class="text-center px-4">
+      <p class="font-display text-xl md:text-2xl text-bone font-semibold">{s.big}</p>
+      <p class="text-muted text-sm mt-1">{s.small}</p>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import SmartImage from '../components/SmartImage.astro';
+import SignalBar from '../components/SignalBar.astro';
+import PillarCard from '../components/PillarCard.astro';
+import ProofStrip from '../components/ProofStrip.astro';
+import CTA from '../components/CTA.astro';
+
+const pillars = [
+  {
+    number: '01',
+    title: 'Corporate AV',
+    copy: 'Audio, projection, LED, and show-calling for general sessions, galas, and breakouts. We run the room so you can run the event.',
+  },
+  {
+    number: '02',
+    title: 'Broadcasting',
+    copy: 'Multi-camera live production and streaming — conferences, municipal meetings, and game day. Broadcast discipline at event-production speed.',
+  },
+  {
+    number: '03',
+    title: 'Event Media',
+    copy: "Event capture, testimonials, and highlight reels. Your event ends; your content doesn't.",
+  },
+];
+---
+
+<Base title="Broadcast-grade event production in Atlanta">
+  <!-- Hero -->
+  <section class="relative min-h-[90vh] flex items-end">
+    <div class="absolute inset-0">
+      <SmartImage
+        filename="avalon.jpg"
+        alt="Dark ballroom with dual projection screens and chandelier during a general session"
+        class="w-full h-full object-cover"
+        eager
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20"></div>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-6 pb-20 pt-40 w-full">
+      <p class="eyebrow mb-5">ATLANTA · CORPORATE AV · BROADCASTING · EVENT MEDIA</p>
+      <h1 class="text-5xl md:text-7xl font-bold text-bone leading-[1.05] max-w-3xl">
+        Your event, broadcast-grade.
+      </h1>
+      <p class="text-muted text-lg md:text-xl mt-6 max-w-2xl leading-relaxed">
+        Full-room AV, live broadcast, and on-site media capture — one crew, one point of contact, zero handoffs.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-9">
+        <a href="/contact" class="btn-signal">Get a quote</a>
+        <a href="/work" class="btn-ghost">See our work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three pillars -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <SignalBar class="mb-6" />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {pillars.map((p) => <PillarCard number={p.number} title={p.title} copy={p.copy} />)}
+    </div>
+  </section>
+
+  <!-- StudioLive band -->
+  <section class="bg-panel border-y border-line">
+    <div class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <SignalBar class="mb-6" />
+        <p class="eyebrow mb-4">SIGNATURE OFFERING</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-bone mb-6">StudioLive</h2>
+        <p class="text-muted text-lg leading-relaxed mb-8">
+          A broadcast interview studio that deploys inside your event. Broadcast lighting, dual cameras, pro audio — capturing leadership and attendee stories on-site, delivered the same week.
+        </p>
+        <a href="/studiolive" class="btn-signal">Bring StudioLive to your event →</a>
+      </div>
+      <div class="aspect-[4/3]">
+        <SmartImage
+          filename="14ft-screen.jpeg"
+          alt="Live session with speaker on stage in front of full audience"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof strip -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <ProofStrip />
+  </section>
+
+  <!-- Closing CTA -->
+  <CTA heading="Have an event on the calendar?" buttonText="Start the conversation" href="/contact" />
+</Base>
