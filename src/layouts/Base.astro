@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Tally from '../components/Tally.astro';
 
 interface Props {
   title: string;
@@ -19,6 +20,7 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
+const canonical = new URL(Astro.url.pathname, 'https://upwardspiralpro.com').href;
 ---
 
 <!doctype html>
@@ -35,17 +37,32 @@ const currentPath = Astro.url.pathname;
     <meta name="theme-color" content="#0E1116" />
     <title>{title} · Upward Spiral Productions</title>
     <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Fonts are self-hosted in /public/fonts. Preload the two that paint first. -->
+    <link rel="preload" href="/fonts/archivo-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://upwardspiralpro.com/og-image.png" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Upward Spiral Productions" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://upwardspiralpro.com/og-image.png" />
   </head>
   <body>
     <header class="border-b border-line bg-ink/95 backdrop-blur sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="/" class="font-display font-bold tracking-tight text-bone text-lg">
+        <a
+          href="/"
+          class="flex items-center gap-3 font-display font-bold tracking-tight text-bone text-lg"
+          aria-label="Upward Spiral Productions — home"
+        >
+          <Tally size={26} />
           UPWARD SPIRAL
         </a>
         <nav class="hidden md:flex items-center gap-8">
@@ -72,7 +89,10 @@ const currentPath = Astro.url.pathname;
     <footer class="border-t border-line bg-panel">
       <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:justify-between gap-10">
         <div class="flex flex-col gap-3">
-          <span class="font-display font-bold text-bone text-lg">UPWARD SPIRAL</span>
+          <span class="flex items-center gap-3 font-display font-bold text-bone text-lg">
+            <Tally size={24} />
+            UPWARD SPIRAL
+          </span>
           <p class="text-muted text-sm max-w-xs">Atlanta · Corporate AV · Broadcasting · Event Media</p>
         </div>
         <nav class="flex flex-col gap-2">

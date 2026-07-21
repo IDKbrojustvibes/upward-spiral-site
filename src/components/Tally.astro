@@ -1,0 +1,22 @@
+---
+/* The Tally — the brand mark. Geometry is fixed on a 32-unit grid:
+   housing ring r=9 stroke 3 in `line`, lit core r=5.2 in `signal`.
+   Scale the whole thing; never redraw it. */
+interface Props {
+  size?: number;
+  class?: string;
+}
+const { size = 28, class: className = '' } = Astro.props;
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 32 32"
+  class={className}
+  aria-hidden="true"
+  focusable="false"
+>
+  <circle cx="16" cy="16" r="9" fill="none" stroke="#2A313B" stroke-width="3" />
+  <circle cx="16" cy="16" r="5.2" fill="#E8532F" />
+</svg>

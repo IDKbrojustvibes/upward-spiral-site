@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://upwardspiralpro.com/sitemap.xml

@@ -1,14 +1,21 @@
 ---
+/* The eyebrow carries the lane's job in the flywheel rather than a number —
+   these are three parallel roles, not three sequential steps. Muted, not signal:
+   the tally rule caps signal at three appearances per viewport and the section's
+   signal bar already spends one. */
 interface Props {
-  number: string;
+  role: string;
   title: string;
   copy: string;
 }
-const { number, title, copy } = Astro.props;
+const { role, title, copy } = Astro.props;
 ---
 
 <div class="bg-panel border border-line p-8 flex flex-col gap-4">
-  <span class="eyebrow">{number}</span>
+  <span
+    class="text-[11px] md:text-xs tracking-[0.15em] uppercase text-muted font-display font-medium"
+    >{role}</span
+  >
   <h3 class="text-2xl text-bone font-semibold">{title}</h3>
   <p class="text-muted leading-relaxed">{copy}</p>
 </div>
