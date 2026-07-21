@@ -93,9 +93,9 @@ const canonical = new URL(Astro.url.pathname, 'https://upwardspiralpro.com').hre
             <Tally size={24} />
             UPWARD SPIRAL
           </span>
-          <p class="text-muted text-sm max-w-xs">Atlanta · Corporate AV · Broadcasting · Event Media</p>
+          <p class="text-muted text-sm">Corporate AV · Broadcasting · Event Media</p>
         </div>
-        <nav class="flex flex-col gap-2">
+        <nav class="flex flex-wrap items-start gap-x-7 gap-y-2">
           {navLinks.map((link) => (
             <a href={link.href} class="text-muted hover:text-signal text-sm transition-colors">{link.label}</a>
           ))}
