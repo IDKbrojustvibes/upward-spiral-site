@@ -87,23 +87,26 @@ const canonical = new URL(Astro.url.pathname, 'https://upwardspiralpro.com').hre
     </main>
 
     <footer class="border-t border-line bg-panel">
-      <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:justify-between gap-10">
+      <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr] gap-12">
         <div class="flex flex-col gap-3">
-          <span class="flex items-center gap-3 font-display font-bold text-bone text-lg">
-            <Tally size={24} />
-            UPWARD SPIRAL
-          </span>
-          <p class="text-muted text-sm">Corporate AV · Broadcasting · Event Media</p>
+          <span class="font-display font-bold text-bone text-lg tracking-tight">UPWARD SPIRAL</span>
+          <p class="text-muted text-sm leading-relaxed">Corporate AV · Broadcasting · Event Media</p>
         </div>
-        <nav class="flex flex-wrap items-start gap-x-7 gap-y-2">
-          {navLinks.map((link) => (
-            <a href={link.href} class="text-muted hover:text-signal text-sm transition-colors">{link.label}</a>
-          ))}
-        </nav>
-        <div class="flex flex-col gap-2 text-sm text-muted">
-          <a href="mailto:dominic@upwardspiralpro.com" class="hover:text-signal transition-colors">dominic@upwardspiralpro.com</a>
-          <a href="tel:+14704957342" class="hover:text-signal transition-colors">(470) 495-7342</a>
-          <span>Atlanta, GA</span>
+        <div class="flex flex-col gap-4">
+          <span class="eyebrow">Navigate</span>
+          <nav class="flex flex-col gap-2.5">
+            {navLinks.map((link) => (
+              <a href={link.href} class="text-muted hover:text-signal text-sm transition-colors">{link.label}</a>
+            ))}
+          </nav>
+        </div>
+        <div class="flex flex-col gap-4">
+          <span class="eyebrow">Contact</span>
+          <div class="flex flex-col gap-2.5 text-sm text-muted">
+            <a href="mailto:dominic@upwardspiralpro.com" class="hover:text-signal transition-colors">dominic@upwardspiralpro.com</a>
+            <a href="tel:+14704957342" class="hover:text-signal transition-colors">(470) 495-7342</a>
+            <span>Atlanta, GA</span>
+          </div>
         </div>
       </div>
       <div class="border-t border-line">
